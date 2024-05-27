@@ -3,9 +3,12 @@
 #  install geopy
 # pip install geopy timezonefinder # PIp on terminal
 # pip install geopy timezonefinder pytz
-# # Import Files
+# pip install python-dotenv # halt due to conflicts
+# pip install file
 
-from WeatherForecast import WeatherForecast
+## Import Files
+
+from WeatherForecast import *
 from common_imports import *
 
 wc_obj = WeatherForecast()
@@ -18,11 +21,5 @@ country_code = None if country_code == "N" else country_code
 print(f"The selected city_name is: {city_name} in the country code: {str(country_code)}")
 
 
-#wc_obj.get_weatherbycity(city_name)
 wc_obj.get_weatherbycity(city_name, country_code)
 
-
-#time_zone = get_time_zone_by_city(city_name)
-
-#if time_zone:
- #   print(f"Time Zone of {city_name}: {time_zone}")

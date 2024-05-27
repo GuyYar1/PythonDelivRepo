@@ -1,4 +1,4 @@
-import EncodingUtils
+
 from common_imports import *
 import datetime
 
@@ -22,14 +22,12 @@ class WeatherForecast:
                                             https://openweathermap.org/forecast5#name5
              get_weather by city:  gets(cityName: str, country_code: str )
                    """
-        timenow = datetime.datetime.now()
-        formatted_time = timenow.strftime("%Y-%m-%d %H:%M:%S")  # Custom format without "T"
-        current_timeTZ = get_current_time_by_city(cityName)
-        formatted_time = timenow.strftime("%Y-%m-%d %H:%M:%S")  # Custom format without "T"
-        print(f"The current time is:{formatted_time} The time in the relevant City is:{current_timeTZ}")
+        self.print_timesinfo(cityName)
         api_url = "http://api.openweathermap.org/data/2.5/forecast"
         units = "metric"
-        appid = "8fc9d67f835721026f13442e85c59884"  # EncodingUtils.encode_to_base64 doesnt support
+        appidsufiix= EncodingUtils.readprofile("file.env")
+        appid = extract_api_key(appidsufiix)
+         #appid = "8fc9d67f835721026f13442e85c59884"  # EncodingUtils.encode_to_base64 doesnt support
         city = cityName
         country = country_code
 
@@ -75,6 +73,12 @@ class WeatherForecast:
         else:
             print("Failed to retrieve data")
 
+    def print_timesinfo(self, cityName):
+        timenow = datetime.datetime.now()
+        formatted_time = timenow.strftime("%Y-%m-%d %H:%M:%S")  # Custom format without "T"
+        current_timeTZ = get_current_time_by_city(cityName)
+        formatted_time = timenow.strftime("%Y-%m-%d %H:%M:%S")  # Custom format without "T"
+        print(f"The current time is:{formatted_time} The time in the relevant City is:{current_timeTZ}")
 
     def get_cityweather_bylanlon(self, lat, lon):
         """
