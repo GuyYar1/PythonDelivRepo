@@ -1,9 +1,9 @@
 
 from common_imports import *
-
+import datetime
 
 class WeatherForecast:
-    def __init__(self,date_time=None, temperature=None, humidity=None, weather_description=None):
+    def __init__(self, date_time=None, temperature=None, humidity=None, weather_description=None):
         # instance attributes
         self.date_time = date_time
         self.temperature = temperature
@@ -18,12 +18,18 @@ class WeatherForecast:
     def get_weatherbycity(self,cityName: str, country_code: str = None):
         timenow = datetime.datetime.now()
         formatted_time = timenow.strftime("%Y-%m-%d %H:%M:%S")  # Custom format without "T"
-        print(f"The current time is:{formatted_time} The time in the relevant City is:{datetime.datetime.now()}")
+        current_timeTZ = get_current_time_by_city(cityName)
+        formatted_time = timenow.strftime("%Y-%m-%d %H:%M:%S")  # Custom format without "T"
+        print(f"The current time is:{formatted_time} The time in the relevant City is:{current_timeTZ}")
         api_url = "http://api.openweathermap.org/data/2.5/forecast"
         units = "metric"
         appid = "8fc9d67f835721026f13442e85c59884"
         city = cityName
         country = country_code
+
+        if not check_internet():
+            print(f"check your internet connection - seems that you have an issue")
+            exit()
 
         if country is None:
              response = requests.get(api_url, params={"q": city, "units": units, "appid": appid})
@@ -51,7 +57,7 @@ class WeatherForecast:
 
                 print(f"Date & Time: {dt}")
                 print(f"Temperature: {temp:.2f}°C")
-                print(f"humidity: {humidity:.2f}")
+                print(f"Humidity: {humidity:.2f}")
                 print(f"Weather: {weather_description}")
                 print("-" * 20)
 
