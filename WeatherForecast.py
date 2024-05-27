@@ -67,7 +67,7 @@ class WeatherForecast:
 
                 # Create a WeatherForecast object and append it to the list
                 forecast_obj = WeatherForecast(dt, temp, humidity, weather_description)
-                forecast_list.append(forecast_obj)
+                return forecast_list.append(forecast_obj)
 
             # Now forecast_list contains a list of WeatherForecast objects
         else:
