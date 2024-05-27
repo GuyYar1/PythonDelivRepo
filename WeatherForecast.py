@@ -1,4 +1,4 @@
-
+import EncodingUtils
 from common_imports import *
 import datetime
 
@@ -16,6 +16,12 @@ class WeatherForecast:
 
 
     def get_weatherbycity(self,cityName: str, country_code: str = None):
+        """
+             Pure Function, save data to a list of dictionaries uses:
+                                Call 5 day / 3 hour forecast data at:
+                                            https://openweathermap.org/forecast5#name5
+             get_weather by city:  gets(cityName: str, country_code: str )
+                   """
         timenow = datetime.datetime.now()
         formatted_time = timenow.strftime("%Y-%m-%d %H:%M:%S")  # Custom format without "T"
         current_timeTZ = get_current_time_by_city(cityName)
@@ -23,7 +29,7 @@ class WeatherForecast:
         print(f"The current time is:{formatted_time} The time in the relevant City is:{current_timeTZ}")
         api_url = "http://api.openweathermap.org/data/2.5/forecast"
         units = "metric"
-        appid = "8fc9d67f835721026f13442e85c59884"
+        appid = "8fc9d67f835721026f13442e85c59884"  # EncodingUtils.encode_to_base64 doesnt support
         city = cityName
         country = country_code
 
@@ -71,6 +77,13 @@ class WeatherForecast:
 
 
     def get_cityweather_bylanlon(self, lat, lon):
+        """
+            Not in use , working but just to understand better the APIs
+
+        :param lat:
+        :param lon:
+        :return:
+        """
         api_url = "http://api.openweathermap.org/data/2.5/forecast"
         units = "metric"
         appid = "938c93a1b831c3a45a54ec14dce62288"
