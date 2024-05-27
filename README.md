@@ -4,7 +4,7 @@ The project check if there is internet connection otherwise it notify the user. 
 
 # Steps:
     1.Run the project , the main is sign as the main run configuration.
-    2. Answer the question2
+    2. Answer the two question, click enter.
     3.Results retrived in the output pane.
     4.check that the country you selected is the current one.
 # General:    
