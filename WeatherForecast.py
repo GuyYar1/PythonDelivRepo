@@ -101,7 +101,7 @@ class WeatherForecast(CacheBase):
         formatted_time = timenow.strftime("%Y-%m-%d %H:%M:%S")  # Custom format without "T"
         current_timeTZ = get_current_time_by_city(cityName)
         formatted_time = timenow.strftime("%Y-%m-%d %H:%M:%S")  # Custom format without "T"
-        print(f"The current time is:{formatted_time} The time in the relevant City is:{current_timeTZ}")
+        print(f"The current time is:{formatted_time} . {current_timeTZ}")
 
 
 '''
