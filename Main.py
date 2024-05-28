@@ -5,7 +5,8 @@
 # pip install geopy timezonefinder pytz
 # pip install python-dotenv # halt due to conflicts
 # pip install file
-import pickle
+# pip install streamlit
+
 
 from WeatherForecast import *
 from common_imports import *
@@ -16,6 +17,7 @@ wc_obj = WeatherForecast()
 #                "city": None, "countrycode": None, "listresult": []}
 
 doagain = True
+
 
 while doagain:
 
@@ -35,6 +37,6 @@ while doagain:
         print(f"The program ended due to user selection: {user_input}")
 
     except ValueError:
-        print("Invalid input. That is not a number. Please try again.")
+        print("Invalid input. That is not a number. Please try again. Exit...")
 
 
