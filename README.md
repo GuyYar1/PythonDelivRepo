@@ -4,15 +4,23 @@ The project check if there is internet connection otherwise it notify the user. 
 
 # Steps:
 
+<<<<<<< Updated upstream
 # Run it using streamlit:
     1. Open the phaycharm or python terminal 
+=======
+Note: locally without "streamlit" is fully implemented according to requirements.
+       streamlit have few capabilities such as: results list, TZ stamp.
+
+# Run it using streamlit:
+    1. Open the pycharm powershell 
+>>>>>>> Stashed changes
     2. type: streamlit run app.py
-    3. GUI is running locally and connection to restfull api retrived data.
+    3. GUI is running locally and connection to restfull api retried data.
     note: if you want to see the entire support with date TZ you should run the console app. yet not supported at streamlit.
 
     <img width="618" alt="image" src="https://github.com/GuyYar1/PythonDelivRepo/assets/132554415/1ed3ff3f-7018-4bef-b1cd-141fe4e454e9">
 
-# Run it locally using Phycharm or python 311 interpreter(fully completed according to requiremnts) :
+# Run it locally using pycharm or python 311 interpreter :
     1.Run the project , the main is sign as the main run configuration.
     2.Answer the two question, click enter (case sensative key1&Key2 uniqness) .
     3.Results retrived in the output pane.
@@ -25,7 +33,7 @@ The project check if there is internet connection otherwise it notify the user. 
 The project has one class that uses its own attributes and methods. it uses a common Import file to all of its files. that way we can do one import on each file.
     Files:
             1.common_imports.py - gather all the import module or packs into one file and later on use one import all from this collection.
-            2.TimeUtils.py - time utilities that handles the time zone and simmilar.
+            2.TimeUtils.py - time utilities that handles the time zone and similar.
             3.requirements.txt - output of the moduls and pack that installed on developer pc. (should consider in future to clean dependencies to knwo which are used)
             4.gitignore - ignore not relevant files that related to dev IDE or others irrlevant.
             5.IpNetUtils.py - allow to check network, replace an ip in case of blocking from web api service.
@@ -49,7 +57,7 @@ The api Key is saved as encoded 64bit UFT-8 {Base64 is used to encode binary dat
 
 # Prerequisite:
 # 1.
-   In the begining there is a need to install packages using pip install: 
+   In the beginning there is a need to install packages using pip install: 
       python -m pip install requests
      install geopy
      pip install geopy timezonefinder # PIp on terminal
