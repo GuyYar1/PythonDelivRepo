@@ -5,7 +5,9 @@ The project check if there is internet connection otherwise it notify the user. 
 # Steps:
     1.Run the project , the main is sign as the main run configuration.
     2.Answer the two question, click enter (case sensative key1&Key2 uniqness) .
-    3.Results retrived in the output pane (if there is no internet, use mem or persistance cache).
+    3.Results retrived in the output pane.
+        3.1. if there is no internet, use mem or persistance cache.
+        3.2. If more than 2 hours have passed since the last query from the cache, perform a new restfull api query.
     4.check that the country you selected is the current one, otherwise click 1 to continue.
     5. The service is console currently and provide option to do multiple queries.
     
