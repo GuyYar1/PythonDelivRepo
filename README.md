@@ -11,7 +11,8 @@ The project check if there is internet connection otherwise it notify the user. 
     
 # General:    
 The project has one class that uses its own attributes and methods. it uses a common Import file to all of its files. that way we can do one import on each file.
-class WeatherForecast(CacheBase): 
+
+# class WeatherForecast(CacheBase) 
     # Superclass (Base Class): CacheBase
         This is the class from which WeatherForecast inherits. It contains the methods and attributes related to caching that will be shared among different subclasses.
         
