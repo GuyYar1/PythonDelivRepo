@@ -1,0 +1,28 @@
+Scenario 1:
+I deleted the file cache.
+now i enter the city and country code 
+There is no internet connection 
+
+Scenario 2:
+I deleted the file cache.
+now i enter the city and country code 
+There is an internet connection 
+Get data from api gateway
+show data on console
+save data on mem\ram cache
+File cache is saved only if the programs ends, for next run within the 2 hours limitation.
+
+Scenario 3:
+the file cache contains London forcast.
+now i enter the city and country code , London as before.
+There is no internet connection 
+Get data from memcache
+show data on console
+
+
+Scenario 4:
+the file cache contains London forcast.
+now i enter the city and country code , london not as before. Case sensitive 
+There is no internet connection 
+can't get data from memcache
+exit the program
