@@ -12,7 +12,7 @@ Run it using streamlit:
     <img width="618" alt="image" src="https://github.com/GuyYar1/PythonDelivRepo/assets/132554415/1ed3ff3f-7018-4bef-b1cd-141fe4e454e9">
 
 # Run it locally using Phycharm or python 311 interpreter(fully completed according to requiremnts) :
-    1.Run the project , the main is sign as the main run configuration./n
+    1.Run the project , the main is sign as the main run configuration.
     2.Answer the two question, click enter (case sensative key1&Key2 uniqness) .
     3.Results retrived in the output pane.
         3.1. if there is no internet, use mem or persistance cache.
