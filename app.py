@@ -1,7 +1,7 @@
 import streamlit as st
 from WeatherForecast import WeatherForecast  # Replace YourModule with your actual module name
 
-
+# How to run: open powershell type: streamlit run app.py
 def main():
     st.title('Weather Forecast App')
     city = st.text_input('Enter city name', 'London')
@@ -18,6 +18,9 @@ def main():
                 temp = forecast['main']['temp']  # Units are metric: Celsius
                 humidity = forecast['main']['humidity']  # Units are metric: Celsius
                 weather_description = forecast['weather'][0]['description']
+                st.write(f"The selected city_name is: {city} in the country code: {str(country)}")
+                st.write(weather_forecast.print_timesinfo(city, "streamlit"))
+                st.write("-" * 20)
                 st.write(f"Date & Time: {dt}")
                 st.write(f"Temperature: {temp:.2f}°C")
                 st.write(f"Humidity: {humidity:.2f}")

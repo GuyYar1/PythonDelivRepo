@@ -96,13 +96,15 @@ class WeatherForecast(CacheBase):
         print("-" * 20)
         return dt, humidity, temp, weather_description
 
-    def print_timesinfo(self, cityName):
+    def print_timesinfo(self, cityName, streamlit=None):
         timenow = datetime.datetime.now()
         formatted_time = timenow.strftime("%Y-%m-%d %H:%M:%S")  # Custom format without "T"
         current_timeTZ = get_current_time_by_city(cityName)
         formatted_time = timenow.strftime("%Y-%m-%d %H:%M:%S")  # Custom format without "T"
-        print(f"The current time is:{formatted_time} . {current_timeTZ}")
-
+        if streamlit == None:
+            print(f"The current time is:{formatted_time} . {current_timeTZ}")
+        else:
+            return "The current time is: " + formatted_time + ".  " + current_timeTZ
 
 '''
 
