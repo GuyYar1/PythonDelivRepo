@@ -4,11 +4,19 @@ The project check if there is internet connection otherwise it notify the user. 
 
 # Steps:
     1.Run the project , the main is sign as the main run configuration.
-    2. Answer the two question, click enter.
-    3.Results retrived in the output pane.
-    4.check that the country you selected is the current one.
+    2.Answer the two question, click enter (case sensative key1&Key2 uniqness) .
+    3.Results retrived in the output pane (if there is no internet, use mem or persistance cache).
+    4.check that the country you selected is the current one, otherwise click 1 to continue.
+    5. The service is console currently and provide option to do multiple queries.
+    
 # General:    
 The project has one class that uses its own attributes and methods. it uses a common Import file to all of its files. that way we can do one import on each file.
+class WeatherForecast(CacheBase): 
+    # Superclass (Base Class): CacheBase
+        This is the class from which WeatherForecast inherits. It contains the methods and attributes related to caching that will be shared among different subclasses.
+        
+    # Subclass (Derived Class): WeatherForecast
+        This is the class that inherits from CacheBase. It extends the functionality of CacheBase by adding weather-specific methods and attributes.   
 
 # key Gen Data Privacy 
 The api Key is saved as encoded 64bit UFT-8 {Base64 is used to encode binary data into a text format . When there is a Text need to strings are typically represented using UTF-8 encoding. This ensures that all characters, including special characters}
