@@ -12,8 +12,17 @@ def main():
         forecast_list = weather_forecast.get_weatherbycity(city, country)
 
         if forecast_list:
+
             for forecast in forecast_list:
-                st.write(forecast)
+                dt = forecast['dt_txt']
+                temp = forecast['main']['temp']  # Units are metric: Celsius
+                humidity = forecast['main']['humidity']  # Units are metric: Celsius
+                weather_description = forecast['weather'][0]['description']
+                st.write(f"Date & Time: {dt}")
+                st.write(f"Temperature: {temp:.2f}°C")
+                st.write(f"Humidity: {humidity:.2f}")
+                st.write(f"Weather: {weather_description}")
+                st.write("-" * 20)
         else:
             st.write('Failed to retrieve weather data.')
 
