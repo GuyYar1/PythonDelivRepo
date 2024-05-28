@@ -12,24 +12,29 @@ from common_imports import *
 
 wc_obj = WeatherForecast()
 
-forecast_list_cache = {
-                "city": None, "countrycode": None, "listresult": []}
+#forecast_list_cache = {
+#                "city": None, "countrycode": None, "listresult": []}
 
+doagain = True
 
+while doagain:
 
-city_name = input("Enter city Name?")
-country_code = input("Enter country code? if you dont have type: N  -->")
-country_code = None if country_code == "N" else country_code
+    try:
+        # Case sensitive
+        city_name = input("Enter city Name:")
+        country_code = input("Enter country code, if you dont have type enter:N  -->")
+        country_code = None if country_code == "N" else country_code
 
-forecast_list_cache["city"] = city_name
-forecast_list_cache["countrycode"] = country_code
-forecast_list_cache["listresult"] = wc_obj.get_weatherbycity(city_name, country_code)
+        # function retrieved the data list but for now there is no use. optional.
+        wc_obj.get_weatherbycity(city_name, country_code)
 
-print(f"The selected city_name is: {city_name} in the country code: {str(country_code)}")
+        print(f"The selected city_name is: {city_name} in the country code: {str(country_code)}")
 
-cache_file_path = "cache_file.pkl"
+        user_input = input("Please enter 1 to Continue or 0 to Exit: -->")
+        doagain = True if user_input == "1" else False
+        print(f"The program ended due to user selection: {user_input}")
 
-with open(cache_file_path, 'wb') as cache_file:
-    pickle.dump(forecast_list_cache, cache_file)
+    except ValueError:
+        print("Invalid input. That is not a number. Please try again.")
 
 
