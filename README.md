@@ -3,6 +3,15 @@ The project developed in python. It is an console application uses that requires
 The project check if there is internet connection otherwise it notify the user. if there is so it goes to the weather site "https://openweathermap.org/forecast5#name5" and perform a query using two api calls.
 
 # Steps:
+Run it using streamlit:
+    1. Open the phaycharm or python terminal 
+    2. type: streamlit run app.py
+    3. GUI is running locally and connection to restfull api retrived data.
+    note: if you want to see the entire support with date TZ you should run the console app. yet not supported at streamlit.
+
+    <img width="618" alt="image" src="https://github.com/GuyYar1/PythonDelivRepo/assets/132554415/1ed3ff3f-7018-4bef-b1cd-141fe4e454e9">
+
+# Run it locally using Phycharm or python 311 interpreter(fully completed according to requiremnts) :
     1.Run the project , the main is sign as the main run configuration.
     2.Answer the two question, click enter (case sensative key1&Key2 uniqness) .
     3.Results retrived in the output pane.
