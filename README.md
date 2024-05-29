@@ -10,7 +10,7 @@ Note: There will be refactoring which enters logic , classes , Code strategy - b
 
 # Run it using streamlit:
     1. Open the phaycharm or python terminal 
-=======
+
 Note: locally without "streamlit" is fully implemented according to requirements.
        streamlit have few capabilities such as: results list, TZ stamp.
 
