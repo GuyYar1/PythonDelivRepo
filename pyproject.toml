@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "pythondelivrepo"
+version = "0.1.0"
+description = "Weather Forecast"
+authors = ["GuyYar1"]
+license = "Open"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+gradio = "^4.31.5"
+geopy = "^2.4.1"
+streamlit = "^1.35.0"
+file = "^0.3.0"
+requests = "^2.32.3"
+pytz = "^2024.1"
+cache = "^1.0.3"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
