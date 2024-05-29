@@ -8,7 +8,6 @@ Note: There will be refactoring which enters logic , classes , Code strategy - b
         
 # Steps:
 
-<<<<<<< Updated upstream
 # Run it using streamlit:
     1. Open the phaycharm or python terminal 
 =======
@@ -82,11 +81,11 @@ Low separation to classes.currently there are utils and one class.
 
 Refactor will include:
 
-Server side (weather server):
+1.Server side (weather server):
     API Server took its data from the DB transfer it to the client request it: ( our app)
     prepare the data and send us it DTO structure.
 
-our app - Backend
+2.our app - Backend
     should be:
         our app is basically print the data results on the screen using stream lit.        
         "Weather service Printer" got using injection the "weather manager" .
@@ -100,7 +99,7 @@ our app - Backend
         For the mean time we have only one GUI that invoke one trigger at a time but we should consider to check in unit test that it could handle a burst of queries.
         Our app is basically all the time get data from the server, no such case that we update or post requests from our side.
 
-our app- FrontEnd
+3.our app- FrontEnd
 
     The connection between the backend to the "Weather service Printer" which is the high hierarchy class and it is singleton so the updates should be connected via binding per GUI ID.
     In case of multiple request or multiple GUI support. - for the mean time GUI ID will be 1 and only.
