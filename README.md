@@ -2,6 +2,10 @@
 The project developed in python. It is an console application uses that requires 2 parameters: City, [Country code]
 The project check if there is internet connection otherwise it notify the user. if there is so it goes to the weather site "https://openweathermap.org/forecast5#name5" and perform a query using two api calls.
 
+
+Note: There will be refactoring which enters logic , classes , Code strategy - but need to be familier with the use in python.
+        Add refactoring plan\design.
+        
 # Steps:
 
 <<<<<<< Updated upstream
@@ -13,7 +17,6 @@ Note: locally without "streamlit" is fully implemented according to requirements
 
 # Run it using streamlit:
     1. Open the pycharm powershell 
->>>>>>> Stashed changes
     2. type: streamlit run app.py
     3. GUI is running locally and connection to restfull api retried data.
     note: if you want to see the entire support with date TZ you should run the console app. yet not supported at streamlit.
@@ -70,3 +73,35 @@ The api Key is saved as encoded 64bit UFT-8 {Base64 is used to encode binary dat
 # 2.   look also on the commit file name Common_Import save time import on each file.
         later on when we use the pythone with those package or module s we need to import them:
         so i created one file that shows the pack and moduls that were in my pc when my project was run\built. look on the file:requirements.txt.
+
+
+# Refactoring Plan - Design:
+
+The current project is flat with no logic.
+Low separation to classes.currently there are utils and one class.
+
+Refactor will include:
+
+Server side (weather server):
+    API Server took its data from the DB transfer it to the client request it: ( our app)
+    prepare the data and send us it DTO structure.
+
+our app - Backend
+    should be:
+        our app is basically print the data results on the screen using stream lit.        
+        "Weather service Printer" got using injection the "weather manager" .
+        "weather manager" is role is to give command in case GUI is "requested to bring the data and save it".
+        "requested to bring the data and save it" - Parser get the URL from the "weather manager" and the parser request the data on a generic data model. each parser has derived class that fit to one specific query. the parser parse the generic data model to specific model object and save it.
+        This action is asyncronus when the parser finish it raise an event that the data is ready.
+        
+        When the "weather manager" got an event from specific parser that the data was saved in the model. it added it to the queue.
+        And by its own timeline it refer one by one.
+        
+        For the mean time we have only one GUI that invoke one trigger at a time but we should consider to check in unit test that it could handle a burst of queries.
+        Our app is basically all the time get data from the server, no such case that we update or post requests from our side.
+
+our app- FrontEnd
+
+    The connection between the backend to the "Weather service Printer" which is the high hierarchy class and it is singleton so the updates should be connected via binding per GUI ID.
+    In case of multiple request or multiple GUI support. - for the mean time GUI ID will be 1 and only.
+    
