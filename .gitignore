@@ -7,3 +7,5 @@
 cache_file.pkl
 cache_file.pkl
 ScenariostoTest.mp4
+__pycache__/test_example.cpython-311.pyc
+__pycache__/common_imports.cpython-311.pyc
