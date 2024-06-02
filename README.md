@@ -88,19 +88,21 @@ Refactor will include:
 2.our app - Backend
     should be:
         our app is basically print the data results on the screen using stream lit.        
-        "Weather service Printer" got using injection the "weather manager" .
-        "weather manager" is role is to give command in case GUI is "requested to bring the data and save it".
-        "requested to bring the data and save it" - Parser get the URL from the "weather manager" and the parser request the data on a generic data model. each parser has derived class that fit to one specific query. the parser parse the generic data model to specific model object and save it.
-        This action is asyncronus when the parser finish it raise an event that the data is ready.
+        "Weather service Printer"  using injection , is being injected with "weather manager" .
+        "weather manager" role is to give command to specific parser of the specific URL API request.
+        In case GUI  "requested to bring the data and save it" the process began.
+        "requested to bring the data and save it" process - Parser get the URL from the "weather manager" and the parser, request the data on a generic data model. each parser has derived class that fit to one specific                 query. 
+        The parser parse the generic data model to specific model object and save it.
+        This action is asyncronus when the parser finish, it raises an event that the data is ready.
         
         When the "weather manager" got an event from specific parser that the data was saved in the model. it added it to the queue.
-        And by its own timeline it refer one by one.
+        And by its own timeline it refers to the queue one by one.
         
-        For the mean time we have only one GUI that invoke one trigger at a time but we should consider to check in unit test that it could handle a burst of queries.
-        Our app is basically all the time get data from the server, no such case that we update or post requests from our side.
+        For the meantime, we have only one GUI that invoke one trigger at a time, but we should consider to check in unit test that it could handle a burst of queries.
+        Our app is basically all the time get data from the server, no such case that we update or post requests from our side to server.
 
 3.our app- FrontEnd
 
-    The connection between the backend to the "Weather service Printer" which is the high hierarchy class and it is singleton so the updates should be connected via binding per GUI ID.
-    In case of multiple request or multiple GUI support. - for the mean time GUI ID will be 1 and only.
+    The connection between the backend to the "Weather service Printer" which is the high hierarchy class. it based on a singleton, so the updates should be connected via binding per GUI ID.
+    In case of multiple request or multiple GUI support we should use the GUI ID. - for the mean time GUI ID will be 1 and only.
     
