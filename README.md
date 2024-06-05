@@ -3,10 +3,11 @@ The project developed in python. It is an console application uses that requires
 The project check if there is internet connection otherwise it notify the user. if there is so it goes to the weather site "https://openweathermap.org/forecast5#name5" and perform a query using two api calls.
 
 
-# Note: There will be refactoring which enters logic , classes , Code strategy - but need to be familier with the use in python.
-        Add refactoring plan\design.
+# Note: There is a refactoring which enters logic , classes , Code strategy - but need to be familier with the use in python.
+        Add refactoring plan\design. read belwo or at read me at the new REPO:
         # The refactoring is at public repo here - youy may see for correct writing , the use of events , cache and layer of B logic
-        # https://github.com/GuyYar1/WeatherOOP
+        https://github.com/GuyYar1/WeatherOOP
+        
 # Steps:
 
 # Run it using streamlit:
