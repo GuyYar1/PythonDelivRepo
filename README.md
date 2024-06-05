@@ -5,7 +5,7 @@ The project check if there is internet connection otherwise it notify the user. 
 
 Note: There will be refactoring which enters logic , classes , Code strategy - but need to be familier with the use in python.
         Add refactoring plan\design.
-        
+        The refactoring is at public repo here - youy may see for correct writing , the use of events , cache and layer of B logic
 # Steps:
 
 # Run it using streamlit:
