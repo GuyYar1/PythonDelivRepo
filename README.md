@@ -6,7 +6,10 @@ The project check if there is internet connection otherwise it notify the user. 
 # Note: There is a refactoring which enters logic , classes , Code strategy -  need to be familier with the use in python - you may look on the link:WeatherOOP .
         Add refactoring plan\design. read belwo or at read me at the new REPO:
         # The refactoring is at public repo here - youy may see for correct writing , the use of events , cache and layer of B logic
-        https://github.com/GuyYar1/WeatherOOP
+        https://github.com/GuyYar1/WeatherOOP - Done ready to use. Please refer to this as the delivery project.
+
+        old site: https://weather-forecast-17-gy.streamlit.app/
+        
         
 # Steps:
 
