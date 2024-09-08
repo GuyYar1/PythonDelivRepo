@@ -1,3 +1,5 @@
+OLD  - navigate to:  https://github.com/GuyYar1/WeatherOOP 
+
 # Abstrct:
 The project developed in python. It is an console application uses that requires 2 parameters: City, [Country code]
 The project check if there is internet connection otherwise it notify the user. if there is so it goes to the weather site "https://openweathermap.org/forecast5#name5" and perform a query using two api calls.
